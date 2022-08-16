@@ -8,20 +8,29 @@
     <title>BMI</title>
 </head>
 <body>
+<div class="wrapper">    
     <h1>BMI CALULATOR</h1>
 
-    <div class="wrapper">
+
     <div class="data">
-    <input type="number" name="size" id="size" >
-    <input type="number" name="weight" id="weight">
-    <button type="submit" name="calcul">Calculate</button>
+        <form action="#">
+            <label for="size">Enter your size</label>
+            <input type="number" name="size" id="size" >
+            
+            <label for="weight">Enter your weight</label>
+            <input type="number" name="weight" id="weight">
+            <button type="submit" name="calcul" class="submit">Calculate</button>
+        </form>    
     </div>
-
-    <div class="image">
+    
+    <div class="result">
+        <div class="image"></div>
+        <div class="displayBmi"></div>
+        <div class="result"></div>
 
     </div>
-    </div>
+</div>
 
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
