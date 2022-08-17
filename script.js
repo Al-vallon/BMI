@@ -1,5 +1,7 @@
 "user strict";
 window.addEventListener("DOMContentLoaded", (event) => {
+
+    // data
     const BMIData = [
         { name: "Maigreur", color: "midnightblue", range: [0, 18.5] },
         { name: "Bonne santé", color: "green", range: [18.5, 25] },
@@ -8,12 +10,19 @@ window.addEventListener("DOMContentLoaded", (event) => {
         { name: "Obésité sévère", color: "crimson", range: [35, 40] },
         { name: "Obésité morbide", color: "purple", range: 40 },
     ];
+
+    // DOM
     const inputs = document.querySelectorAll("input");
     const submit = document.querySelector(".submit");
     const displayBmi = document.querySelector(".displayBmi");
     const result = document.querySelector(".result");
     const reset = document.querySelector(".reset");
-
+    
+    // wrong number
+    function error() {
+        result.textContent = "❌ Oops, Enter a valid number ";
+    }
+    
     function calcualteBmi() {
         const height = inputs[0].value;
         const weight = inputs[1].value;
@@ -21,33 +30,41 @@ window.addEventListener("DOMContentLoaded", (event) => {
         if (!height || !weight || height <= 0 || weight <= 0) {
             error();
             return;
-        } else {
-            const bmi = Math.floor(weight / Math.pow(height / 100, 2).toFixed(1));
-            return bmi;
-        }
+        }         
+        const bmi = (weight / Math.pow(height / 100, 2)).toFixed(1);
+        return bmi;        
     }
 
-    function error() {
-        result.textContent = "❌ Oops, Enter a valid number ";
-    }
+    // find data in BMI table
+    // function showResult(bmi){
+    //     const rank = BMIData.find(data => {
+    //         if(bmi >= data.range[0] && bmi < data.range[1]) return data;
+    //         else if (typeof data.range === "number" && bmi >= data.range) return data;
+    //     });
+    //     displayBmi.textContent = bim;
+    //     displayBmi.style.color = `${rank.color}`;
+    //     result.textContent = `Résultat : ${rank.name}`;
+    //     return;
+    // }
 
-    function rebootInputs(){
-        document.querySelectorAll('input').value = '';
-    }
 
     submit.addEventListener("click", function (e) {
         e.preventDefault();
         calcualteBmi();
         displayBmi.textContent = calcualteBmi();
+        // showResult(bmi)
+        
     });
 
-    reset.addEventListener("click", function () {
-        // event.preventDefault();        
-        result.textContent = '';        
+
+    // reset the calculator
+    reset.addEventListener("click", function () {       
+        displayBmi.textContent = '0';        
         const height = document.getElementById('size');
         const weight = document.getElementById('weight');
         height.value = '';
         weight.value = '';
         console.log('here');
     });
+
 });
