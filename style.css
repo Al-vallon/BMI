@@ -47,10 +47,10 @@ form{
     transform: translateY(0rem);
   }
   
-  .input {
+.input {
     color: #333;
     font-size: 1.2rem;
-      margin: 2em auto;
+    margin: 2em auto;
     padding: 1.5rem 2rem;
     border-radius: 0.2rem;
     background-color: rgb(255, 255, 255);
@@ -59,14 +59,14 @@ form{
     display: block;
     border-bottom: 0.3rem solid transparent;
     transition: all 0.3s;
-  }
+}
   
-  .input:placeholder-shown + .user__label {
+.input:placeholder-shown + .user__label {
     opacity: 0;
     visibility: hidden;
     -webkit-transform: translateY(-4rem);
     transform: translateY(-4rem);
-  }
+}
 
 .bmi-value{
     width: 30px;
@@ -128,4 +128,10 @@ button:active {
     align-items: center;
     font-weight: bolder;
     font-size: 3rem;
+}
+
+.result{
+    margin: 2em 0em;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
