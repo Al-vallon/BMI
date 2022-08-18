@@ -13,11 +13,16 @@
 
     <div class="data">
         <form action="#">
-            <label for="size">Enter your size</label>
-            <input type="number" name="size" id="size" >
-            
-            <label for="weight">Enter your weight</label>
-            <input type="number" name="weight" id="weight">
+            <div class="inputGroup">
+            <label class="user-label" for="size">Enter your size</label>
+            <input class="input" type="number" name="size" id="size" autocomplete="off" >
+            </div>
+
+            <div class="inputGroup">
+            <label class="user-label" for="weight">Enter your weight</label>
+            <input  class="input" type="number" name="weight" id="weight" autocomplete="off">
+            </div>
+
             <button type="submit" name="calcul" class="submit">Calculate</button>
         </form>    
     </div>
