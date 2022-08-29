@@ -64,7 +64,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
         const weight = document.getElementById('weight');
         height.value = '';
         weight.value = '';
-        console.log('here');
+        result.textContent = '';
+
     });
 
 });
